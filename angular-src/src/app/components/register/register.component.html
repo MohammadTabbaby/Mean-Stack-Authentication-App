@@ -1,1 +1,26 @@
-<p>register works!</p>
+<h2 class="page-header">Register</h2>
+<form (submit)="onRegisterSubmit()">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" [(ngModel)]="name" name="name">
+  </div>
+  <br>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" [(ngModel)]="email" name="email">
+    <br>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your name or email with anyone else.</small>
+  </div>
+  <br>
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" [(ngModel)]="username" name="username">
+    <br>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" [(ngModel)]="password" name="password">
+    <br>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

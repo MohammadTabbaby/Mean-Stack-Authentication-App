@@ -7,20 +7,18 @@ const config = require('../config/database');
 const User = require('../models/user');
 
 //Register
-router.post('/register', (req, res, next) => {
+router.post('/register', async (req, res, next) => {
     let newUser = new User({
         name: req.body.name,
         email: req.body.email,
         username: req.body.username,
         password: req.body.password
     });
-
     User.addUser(newUser, (err, user) => {
         if (err) {
             res.json({ succes: false, msg: 'Failed To register user' });
         } else {
             res.json({ succes: true, msg: 'user registered !' });
-
         }
     });
 });
